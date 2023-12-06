@@ -1,0 +1,15 @@
+  syntax = "proto3";
+
+  enum Status {
+    OK = 0;
+    BAD_REQUEST = 1;
+    NOT_FOUND = 2;
+    INTERNAL_ERROR = 3;
+    // Add more status codes as needed.
+  }
+
+  message Response {
+    Status status = 1;
+    bytes payload = 2;    // e.g., data returned from a GET request
+    uint64 timestamp = 3; // clock time on MCU
+  }

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+import "protos/request.proto";
+import "protos/response.proto";
+
+enum PacketType {
+  REQUEST = 0;
+  RESPONSE = 1;
+}
+
+message Packet {
+  uint32 sequence_number = 1;
+  uint32 checksum = 2;
+  PacketType type = 3;
+  oneof payload {
+    Request request = 4;
+    Response response = 5;
+  }
+}
+

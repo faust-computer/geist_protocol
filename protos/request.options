@@ -1,0 +1,2 @@
+Request.address max_size: 32    // limit to 32 bytes
+Request.payload max_size: 128   // limit to 128 bytes

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+enum Method {
+  GET = 0;
+  PUT = 1;
+  // Add more methods as needed.
+}
+
+message Request {
+  string address = 1;   // e.g., "/sensors/temperature"
+  Method method = 2;    // e.g., GET, PUT
+  bytes payload = 3;    // e.g., parameters for a method
+  uint64 timestamp = 4; // clock time on MCU
+}
